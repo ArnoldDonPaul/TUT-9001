@@ -4,7 +4,7 @@
     background-color: black;
 }
 
-.landing {
+.greeting {
     padding: 70px 16px 0 16px;
     display: flex;
     flex-direction: column;
@@ -12,20 +12,22 @@
     flex: center;
 }
 
-.TUT-off {
+.TUT-talking {
     height: 150px;
     width: 150px;
     margin-bottom: 50px;
 }
 
 .prompt {
-    &__question {
-        font-size: 12px;
+    &__username {
         color: white;
+        font-size: 12px;
     }
-    &__button {
-        height: 250px;
-        opacity: .5;
-        margin-top: 100px;
+    &__arrow {
+        height: 150px;
+        position: fixed;
+        bottom: 50px;
+        left: 150px;
     }
+
 }

@@ -1,17 +1,21 @@
 import React from 'react';
-import logo from './assets/talking.gif';
+import { BrowserRouter, Route } from "react-router-dom";
 import './App.css';
+import LandingPage from './components/LandingPage/LandingPage'
+import Boot from './components/Boot/Boot'
+import Greeting from './components/Greeting/Greeting'
+import InputForm from './components/InputForm/InputForm'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          TUT-9001
-        </p>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Route exact path='/' component={LandingPage} />
+        <Route path='/boot' component={Boot} />
+        <Route path='/username' component={Greeting} />
+        <Route path='/input-form' component={InputForm} />
+      </BrowserRouter>
+    </>
   );
 }
 
