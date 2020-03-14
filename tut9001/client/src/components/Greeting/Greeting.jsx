@@ -12,7 +12,7 @@ export default class Greeting extends Component {
                 <div className='greeting'>
                     <img className='TUT-talking' src={TUT} alt='Daisy...Daisy...'></img>
                     <p className='prompt__username'>[GREETINGS 'USER']</p>
-                    <p className='prompt__username'>[ARE YOU READY TO CONDUCT YOUR EXERCISE ROUTINE?]</p>
+                    <p className='prompt__username'>[ARE YOU READY TO GET STARTED?]</p>
                     <Link to='/input-form'>
                         <img className='prompt__arrow' src={Button} alt='Scanner'></img>
                     </Link>

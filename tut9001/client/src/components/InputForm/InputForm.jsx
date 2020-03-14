@@ -13,9 +13,9 @@ export default class InputForm extends Component {
                     <img className='TUT-talking' src={TUT} alt='Daisy...Daisy...'></img>
                     <p className='prompt__username'>[WHAT WILL THE FOCUS OF YOUR WORKOUT BE?]</p>
                     <form className='checkbox-form'>
-                        <input type="checkbox" className='checkbox-form__upper' name="upper" value="upper"></input>
+                        <input type="checkbox" className='checkbox-form__upper-box' name="upper" value="upper"></input>
                         <label for="upper" className='checkbox-form__upper'> UPPER BODY</label>
-                        <input type="checkbox" className='checkbox-form__lower' name="lower" value="upper"></input>
+                        <input type="checkbox" className='checkbox-form__lower-box' name="lower" value="upper"></input>
                         <label for="upper" className='checkbox-form__lower'> LOWER BODY</label>
                     </form>
                     <Link to='/'>
