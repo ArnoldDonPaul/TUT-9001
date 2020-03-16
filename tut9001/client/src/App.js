@@ -12,7 +12,7 @@ function App() {
       <BrowserRouter>
         <Route exact path='/' component={LandingPage} />
         <Route path='/boot' component={Boot} />
-        <Route path='/username' component={Greeting} />
+        <Route path='/greeting' component={Greeting} />
         <Route path='/input-form' component={InputForm} />
       </BrowserRouter>
     </>

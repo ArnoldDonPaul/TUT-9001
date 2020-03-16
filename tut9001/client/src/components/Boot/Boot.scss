@@ -5,7 +5,9 @@
 }
 
 .boot {
-    padding: 70px 16px 0 16px;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,19 +17,23 @@
 .TUT-boot {
     height: 150px;
     width: 150px;
-    margin-bottom: 50px;
+    position: relative;
+    top: 50px;
 }
 
 .prompt {
-    &__booting {
-        color: white;
-        font-size: 12px;
+    &__power {
+        height: 75px;
+        position: absolute;
+        bottom: 20px;
+        left: 170px;
+        
     }
     &__arrow {
-        height: 150px;
-        position: fixed;
-        bottom: 50px;
-        left: 150px;
+        height: 75px;
+        position: absolute;
+        bottom: 20px;
+        right: 50px;
     }
 }
 

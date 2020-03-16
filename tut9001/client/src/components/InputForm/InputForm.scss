@@ -4,46 +4,64 @@
     background-color: black;
 }
 
-.input {
-    padding: 70px 16px 0 16px;
+.terminal {
+    text-align: left;
+    border: solid 2px grey;
+    color: white;
+    padding: 10px;
+    height: 350px;
+    width: 80vw;
+    position: absolute;
+    top: 250px;
+    &__text {
+        color: red;
+        font-weight: bold;
+    }
+    // &__prompt {
+
+    // }
+}
+
+.greeting {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     flex: center;
 }
 
-// .checkbox-form {
-//     color: white;
-//     &__upper-box {
-
-//     }
-//     &__upper {
-
-//     }
-//     &__lower-box {
-
-//     }
-//     &__lower {
-
-//     }
-// }
-
-.TUT-talking {
+.TUT-greeting {
     height: 150px;
     width: 150px;
-    margin-bottom: 50px;
+    position: absolute;
+    top: 50px;
 }
 
-.prompt {
-    &__username {
-        color: white;
-        font-size: 12px;
+
+
+.nav {
+    &__power {
+        height: 75px;
+        position: absolute;
+        bottom: 20px;
+        left: 170px;
+        
     }
     &__arrow {
-        height: 150px;
-        position: fixed;
-        bottom: 50px;
-        left: 150px;
+        height: 75px;
+        position: absolute;
+        bottom: 20px;
+        right: 50px;
     }
+}
 
+.option-box {
+    &__box {
+        color: black;
+    }
+    &__text {
+
+    }
 }
