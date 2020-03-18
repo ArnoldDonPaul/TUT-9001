@@ -1,0 +1,38 @@
+[
+    {
+        "name": "lunges",
+        "category": "lower",
+        "description": "feet standing shoulder-width apart and toes pointing forward, take a big step backwards with the left leg. land on the balls of the feet, keeping the left heel off the ground. be aware not to lean forward. Dip the left knee towards the floor while keeping the right knee completely stationary and vertically in line with the right heel. Kick the floor away with the left leg, returning to the initial standing position. alternate legs and repeat",
+        "weights-req": false
+    },
+    // {
+    //     "name": "romanian deadlift",
+    //     "category": "lower",
+    //     "description": "stand tall with feet hip-width apart, toes pointing forward, and a slight bend in the knees. palms down, rest each dumbbell against the front of the thigh. keep the head and spine in a neutral position as the hips bend forward, the weights glide downward and the hips sit back. a stretching sensation should be felt in the back of the thigh. push through the heels of the feet while returning to the initial position. repeat",
+    //     "weights-req": true
+    // },
+    {
+        "name": "squats",
+        "category": "lower",
+        "description": "standing with heels hip-width apart and the toes turned outward slightly, sit back and squat downward until the thighs are parallel with the floor. push the knees outward while kicking the floor away to return to a standing position. repeat",
+        "weights-req": false
+    },
+    {
+        "name": "bent-over row",
+        "category": "upper",
+        "description": "stand tall with feet hip-width apart, toes pointing forward, and a slight bend in the knees. keep the spine long and shoulders rolled back while bending over no less than 45 degrees. hold this position with each arm outstretched towards the floor. point the thumbs away from eachother. swing the arms open and point each thumb behind you, pinching the shoulderblades together while contracting the muscles in your back.",
+        "weights-req": true
+    },
+    // {
+    //     "name": "bicep curl",
+    //     "category": "upper",
+    //     "description": "",
+    //     "weights-req": true
+    // },
+    {
+        "name": "push-up",
+        "category": "upper",
+        "description": "lay on stomach with feet together and palms against the floor. place each hand so that the thumb is tucked vertically under the armpit. keep the body rigid while pushing away from the floor and extending the arms. lower the body once more, this time hovering a few inches before pushing once again. repeat",
+        "weights-req": false
+    }
+]
