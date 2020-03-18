@@ -19,6 +19,9 @@ export default class Boot extends Component {
                 <Link to='/greeting'>
                     <img className='nav__arrow' src={ArrowR} alt='button'></img>
                 </Link>
+                <div className='output'>
+
+                </div>
             </section>
         )
     }

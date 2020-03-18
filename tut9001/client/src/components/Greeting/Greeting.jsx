@@ -69,6 +69,9 @@ export default class Greeting extends Component {
                             <img className='nav__arrow' src={ArrowR} alt='button'></img>
                         </Link>
                     )}
+                    <div className='output'>
+
+                    </div>
                 </div>
             </section>
         )

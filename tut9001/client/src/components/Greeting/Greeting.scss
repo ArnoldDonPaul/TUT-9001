@@ -60,3 +60,20 @@
 .username {
     color: white;
 }
+
+.output {
+    text-align: left;
+    border: solid 2px grey;
+    color: white;
+    padding: 10px;
+    height: 575px;
+    width: 80.25vw;
+    position: absolute;
+    top: 765px;
+    left: 29px;
+    right: 29px;
+    &__text {
+        color: red;
+        font-weight: bold;
+    }
+}

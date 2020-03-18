@@ -15,7 +15,12 @@ export default class LandingPage extends Component {
                 <Link to='/boot'>
                     <img className='nav__power' src={Power} alt='Scanner'></img>
                 </Link>
-            </section>
+                <section>
+                    <div className='output'>
+
+                    </div>
+                </section>
+            </section >
         )
     }
 }
