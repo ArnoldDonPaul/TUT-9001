@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import InputFormComp from '../components/InputForm/InputForm'
-
+//practicing passing states as prop from a parent to a child
 export default class InputForm extends Component {
     constructor(props) {
         super(props);
@@ -14,17 +14,14 @@ export default class InputForm extends Component {
     }
     handleChange1 = event => {
         this.setState({ boxUpper: event.target.checked }, () => {
-            console.log("upper returned", this.state.boxUpper);
         });
     }
     handleChange2 = event => {
         this.setState({ boxLower: event.target.checked }, () => {
-            console.log("lower returned", this.state.boxLower);
         });
     }
     handleChange3 = event => {
         this.setState({ boxYes: event.target.checked }, () => {
-            console.log("yes returned", this.state.boxYes);
         });
     };
     handleSubmit(event) {

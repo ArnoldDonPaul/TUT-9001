@@ -36,7 +36,16 @@
     &__text {
         color: red;
         font-weight: bold;
+        &--special {
+            margin-top: 0;
+        }
     }
+}
+
+.true-false {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
 }
 
 .greeting {
