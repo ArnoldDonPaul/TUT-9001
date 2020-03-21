@@ -91,7 +91,7 @@ const InputForm = (props) => {
                         )}
                     </div>
                 </div>
-                <Link to='/'>
+                <Link to='/power-down'>
                     <img className='nav__power' src={Power} alt='button'></img>
                 </Link>
                 {props.inputProps.showInfo && (
@@ -117,11 +117,11 @@ const InputForm = (props) => {
                                 <p>{Warmup2}</p>
                                 <p>{Warmup3}</p>
                             </div>
-                            {/* {props.exProps.map(x => (
+                            {props.inputProps.data.map(x => (
                                 <div key={x.id}>
-
+                                    <p className='output__text'>{x.name}</p>
                                 </div>
-                            ))} */}
+                            ))}
                         </section>
                     </>
                 )}

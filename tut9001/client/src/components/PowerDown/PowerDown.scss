@@ -4,7 +4,7 @@
     background-color: black;
 }
 
-.landing {
+.boot {
     height: 100vh;
     width: 100vw;
     position: absolute;
@@ -14,36 +14,18 @@
     flex: center;
 }
 
-.TUT-off {
+.TUT-power {
     height: 150px;
     width: 150px;
     position: relative;
     top: 50px;
-
 }
 
-.nav {
+.prompt {
     &__power {
         height: 75px;
         position: absolute;
         bottom: 20px;
-        left: 170px;  
-    }
-}
-
-.output {
-    text-align: left;
-    border: solid 2px grey;
-    color: white;
-    padding: 10px;
-    height: 575px;
-    width: 80.25vw;
-    position: absolute;
-    top: 765px;
-    left: 29px;
-    right: 29px;
-    &__text {
-        color: red;
-        font-weight: bold;
+        left: 170px;
     }
 }

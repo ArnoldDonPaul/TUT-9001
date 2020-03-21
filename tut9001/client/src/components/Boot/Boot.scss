@@ -1,5 +1,5 @@
 .background {
-    height: 100vh;
+    height: 200vh;
     width: 100vw;
     background-color: black;
 }
@@ -22,7 +22,7 @@
 }
 
 .prompt {
-    &__power {
+        &__power {
         height: 75px;
         position: absolute;
         bottom: 20px;

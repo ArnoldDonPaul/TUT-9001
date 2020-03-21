@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import InputFormComp from '../components/InputForm/InputForm'
+import axios from 'axios';
+
 //practicing passing states as prop from a parent to a child
 export default class InputForm extends Component {
     constructor(props) {
@@ -8,7 +10,8 @@ export default class InputForm extends Component {
             showInfo: false,
             boxUpper: false,
             boxLower: false,
-            boxYes: false
+            boxYes: false,
+            data: []
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -27,8 +30,16 @@ export default class InputForm extends Component {
     handleSubmit(event) {
         event.preventDefault();
         this.setState({
-            showInfo: true
+            showInfo: true,
         });
+        axios
+            .get(`http://localhost:8080/input-form`)
+            .then(response => {
+                this.setState({
+                    data: response.data
+                });
+            }
+            )
     }
     render() {
         return (

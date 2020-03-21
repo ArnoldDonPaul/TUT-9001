@@ -13,7 +13,7 @@ export default class Boot extends Component {
                 <div className='boot'>
                     <img className='TUT-boot' src={TUT} alt='Daisy...Daisy...'></img>
                 </div>
-                <Link to='/boot'>
+                <Link to='/power-down'>
                     <img className='nav__power' src={Power} alt='Scanner'></img>
                 </Link>
                 <Link to='/greeting'>

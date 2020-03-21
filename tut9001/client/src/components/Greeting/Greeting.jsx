@@ -61,7 +61,7 @@ export default class Greeting extends Component {
                             )}
                         </div>
                     </div>
-                    <Link to='/'>
+                    <Link to='/power-down'>
                         <img className='nav__power' src={Power} alt='button'></img>
                     </Link>
                     {this.state.showInfo && (
