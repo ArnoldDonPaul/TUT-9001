@@ -40,6 +40,36 @@
             margin-top: 0;
         }
     }
+    &__instruction {
+        color: red;
+        margin-top: 0;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    &__header {
+        color: white;
+        margin-top: 0;
+        font-size: 14px;
+    }
+    &__warmup {
+        display: flex;
+        justify-content: space-between;
+        &--output {
+            color: white;
+            font-size: 18px;
+            margin-top: 0;
+        }
+    }
+    &__exercise {
+        color: white;
+        font-size: 18px;
+        margin-top: 0;
+        text-transform: uppercase;
+    }
+    &__inline {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .true-false {

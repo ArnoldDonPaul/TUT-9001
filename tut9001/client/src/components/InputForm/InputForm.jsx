@@ -27,9 +27,9 @@ const InputForm = (props) => {
         Lower = "FALSE"
     }
     if (props.inputProps.boxYes === true) {
-        Weights = "TRUE"
+        Weights = "WITH WEIGHTS"
     } else {
-        Weights = "FALSE"
+        Weights = ""
     }
     //sets the title of the workout based on checkbox state
     if (Upper === "TRUE" && Lower === "TRUE") {
@@ -98,7 +98,7 @@ const InputForm = (props) => {
                     <>
                         <img className='nav__arrow' src={ArrowR} alt='button'></img>
                         <section className='output'>
-                            <div className='true-false'>
+                            {/* <div className='true-false'>
                                 <div className='output__text'>
                                     <p className='output__text--special'>UPPER: {Upper}</p>
                                 </div>
@@ -108,18 +108,20 @@ const InputForm = (props) => {
                                 <div className='output__text'>
                                     <p className='output__text--special'>WEIGHTS: {Weights}</p>
                                 </div>
-                            </div>
-                            <p className='output__text--special'>45 SECONDS / EXERCISE</p>
-                            <h1>{Title} WORKOUT</h1>
-                            <p className='output__text--special'>BEGIN WITH A LIGHT WARM-UP - NO WEIGHTS</p>
-                            <div className='true-false'>
-                                <p>{Warmup1}</p>
-                                <p>{Warmup2}</p>
-                                <p>{Warmup3}</p>
+                            </div> */}
+                            <h1 className='output__header'>{Title} WORKOUT {Weights}</h1>
+                            <p className='output__instruction'>BEGIN WITH A LIGHT WARM-UP: 1 MINUTE EACH</p>
+                            <p className='output__warmup--output'>{Warmup1}</p>
+                            <p className='output__warmup--output'>{Warmup2}</p>
+                            <p className='output__warmup--output'>{Warmup3}</p>
+                            <div className='output__inline'>
+                                <p className='output__instruction'>45 SECONDS WORK</p>
+                                <p className='output__instruction'>|</p>
+                                <p className='output__instruction'>20 SECONDS REST</p>
                             </div>
                             {props.inputProps.data.map(x => (
                                 <div key={x.id}>
-                                    <p className='output__text'>{x.name}</p>
+                                    <p className='output__exercise'>{x.name}</p>
                                 </div>
                             ))}
                         </section>
