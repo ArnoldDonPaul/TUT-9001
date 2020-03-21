@@ -29,7 +29,7 @@ const InputForm = (props) => {
     if (props.inputProps.boxYes === true) {
         Weights = "WITH WEIGHTS"
     } else {
-        Weights = ""
+        Weights = "WITH BODYWEIGHT"
     }
     //sets the title of the workout based on checkbox state
     if (Upper === "TRUE" && Lower === "TRUE") {

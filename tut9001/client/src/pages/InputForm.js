@@ -32,14 +32,28 @@ export default class InputForm extends Component {
         this.setState({
             showInfo: true,
         });
-        axios
-            .get(`http://localhost:8080/input-form`)
-            .then(response => {
-                this.setState({
-                    data: response.data
-                });
-            }
-            )
+        if (this.state.boxUpper === true && this.state.boxLower === true && this.state.boxYes === true) {
+            axios
+                .get(`http://localhost:8080/input-form`)
+                .then(response => {
+                    this.setState({
+                        data: response.data
+                    });
+                }
+                )
+        } else if (this.state.boxUpper === true && this.state.boxLower === false) {
+            axios
+                .get(`http://localhost:8080/input-form`)
+                .then(response => {
+                    this.setState({
+                        data: response.data.category.find(category => category.includes('upper'))
+                    });
+                }
+                )
+        } else {
+
+        }
+
     }
     render() {
         return (
