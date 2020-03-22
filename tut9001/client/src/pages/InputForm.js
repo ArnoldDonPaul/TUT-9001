@@ -91,7 +91,7 @@ export default class InputForm extends Component {
             axios
                 .get(`http://localhost:8080/input-form`)
                 .then(response => {
-                    const responseData = response.data.filter(category => category.category === "lower");
+                    const responseData = response.data.filter(category => category.BW === true);
                     console.log(responseData)
                     this.setState({
                         data: responseData
@@ -102,7 +102,7 @@ export default class InputForm extends Component {
             axios
                 .get(`http://localhost:8080/input-form`)
                 .then(response => {
-                    const responseData = response.data.filter(category => category.category === "lower");
+                    const responseData = response.data.filter(category => category.weightsReq === false);
                     console.log(responseData)
                     this.setState({
                         data: responseData

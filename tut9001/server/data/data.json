@@ -4,62 +4,65 @@
         "name": "lunges",
         "category": "lower",
         "description": "take a big step back with your left leg. dip your left knee toward the floor. kick the floor away with your left leg. alternate legs and repeat",
-        "weights-req": false
+        "weightsReq": false
     },
     {
         "key": 1,
         "name": "push-up",
         "category": "upper",
         "description": "lay on your stomach. place each hand so that the thumb is tucked vertically under the armpit. keep the body rigid while pushing away from the floor. lower your body - not all the way! repeat",
-        "weights-req": false
+        "weightsReq": false,
+        "BW": true
     },
     {
         "key": 2,
         "name": "squats",
         "category": "lower",
         "description": "sit back and squat downward until your thighs are parallel with the floor. push the knees outward while kicking the floor away. repeat",
-        "weights-req": false
+        "weightsReq": false
     },
     {
         "key": 3,
         "name": "bent-over row",
         "category": "upper",
         "description": "bend over with a straight back and a slight bend in the knees. pinch your shoulderblades together as you pull the weights upward toward you. control the weight back down. repeat",
-        "weights-req": true
+        "weightsReq": true
     },
     {
         "key": 4,
         "name": "wall sit",
         "category": "lower",
         "description": "stand with your back against a wall and squat until your thighs are parallel with the floor. hold",
-        "weights-req": false
+        "weightsReq": false
     },
     {
         "key": 5,
         "name": "bicep curl",
         "category": "upper",
         "description": "keep your back straight and elbow pinned to your side. contract the bicep and pull the weight towards you. controlled release back down. repeat",
-        "weights-req": true
+        "weightsReq": true
     },
     {
         "key": 6,
         "name": "shoulder press",
         "category": "upper",
         "description": "raise each dumbbell infront of you with arms bent 90 degrees and palms facing eachother. wrist flat. push the weights upward until full extension. control them on the way down. repeat",
-        "weights-req": true
+        "weightsReq": true
     },
     {
         "key": 7,
         "name": "plank",
         "category": "lower",
         "description": "lay on your stomach. raise your body onto your elbows and toes. elbows vertically in line with your shoulders. hold",
-        "weights-req": false
+        "weightsReq": false,
+        "BW": true
     },
     {
         "key": 8,
         "name": "high plank",
         "category": "upper",
         "description": "lay on your stomach. raise your body onto your hands and toes. wrists vertically in line with your shoulders. hold",
-        "weights-req": false
+        "weightsReq": false,
+        "BW": true
     }
 ]
