@@ -6,6 +6,7 @@ import ArrowD from '../../assets/arrow-down.png';
 
 import './InputForm.scss'
 //practicing the use of if statements
+
 let Upper = ""
 let Lower = ""
 let Weights = ""
@@ -27,9 +28,9 @@ const InputForm = (props) => {
         Lower = "FALSE"
     }
     if (props.inputProps.boxYes === true) {
-        Weights = "WITH WEIGHTS"
+        Weights = " - WEIGHTS"
     } else {
-        Weights = "WITH BODYWEIGHT"
+        Weights = " - BODYWEIGHT"
     }
     //sets the title of the workout based on checkbox state
     if (Upper === "TRUE" && Lower === "TRUE") {

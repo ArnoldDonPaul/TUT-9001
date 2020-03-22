@@ -41,17 +41,74 @@ export default class InputForm extends Component {
                     });
                 }
                 )
-        } else if (this.state.boxUpper === true && this.state.boxLower === false) {
+        } else if (this.state.boxUpper === false && this.state.boxLower === false && this.state.boxYes === false) {
             axios
                 .get(`http://localhost:8080/input-form`)
                 .then(response => {
+                    const responseData = response.data.filter(category => category.category === "lower");
+                    console.log(responseData)
                     this.setState({
-                        data: response.data.category.find(category => category.includes('upper'))
+                        data: responseData
                     });
                 }
                 )
-        } else {
+        } else if (this.state.boxUpper === true && this.state.boxLower === false && this.state.boxYes === true) {
+            axios
+                .get(`http://localhost:8080/input-form`)
+                .then(response => {
+                    const responseData = response.data.filter(category => category.category === "upper");
+                    console.log(responseData)
+                    this.setState({
+                        data: responseData
+                    });
+                }
+                )
+        } else if (this.state.boxUpper === false && this.state.boxLower === true && this.state.boxYes === true) {
+            axios
+                .get(`http://localhost:8080/input-form`)
+                .then(response => {
+                    const responseData = response.data.filter(category => category.category === "lower");
+                    console.log(responseData)
+                    this.setState({
+                        data: responseData
+                    });
+                }
+                )
+        } else if (this.state.boxUpper === false && this.state.boxLower === true && this.state.boxYes === false) {
+            axios
+                .get(`http://localhost:8080/input-form`)
+                .then(response => {
+                    const responseData = response.data.filter(category => category.category === "lower");
+                    console.log(responseData)
+                    this.setState({
+                        data: responseData
+                    });
+                }
+                )
 
+
+        } else if (this.state.boxUpper === true && this.state.boxLower === false && this.state.boxYes === false) {
+            axios
+                .get(`http://localhost:8080/input-form`)
+                .then(response => {
+                    const responseData = response.data.filter(category => category.category === "lower");
+                    console.log(responseData)
+                    this.setState({
+                        data: responseData
+                    });
+                }
+                )
+        } else if (this.state.boxUpper === true && this.state.boxLower === true && this.state.boxYes === false) {
+            axios
+                .get(`http://localhost:8080/input-form`)
+                .then(response => {
+                    const responseData = response.data.filter(category => category.category === "lower");
+                    console.log(responseData)
+                    this.setState({
+                        data: responseData
+                    });
+                }
+                )
         }
 
     }
