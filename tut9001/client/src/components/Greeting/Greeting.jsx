@@ -47,16 +47,16 @@ export default class Greeting extends Component {
                         <p className='terminal__text'>>> TUT-9001 SYSTEM READY </p>
                         <p className='terminal__text'>>> PLEASE ENTER YOUR USERNAME </p>
                         <form onSubmit={this.handleSubmit}>
-                            <input type='text' value={this.state.value} onChange={this.handleChange}></input>
-                            <input type='submit' value='SUBMIT'></input>
+                            <input type='text' className='terminal__input' value={this.state.value} onChange={this.handleChange}></input>
+                            <input type='submit' className='terminal__button' value='SUBMIT'></input>
                         </form>
                         <div className='result-box'>
                             {this.state.showInfo && (
                                 <>
-                                    <p className='terminal__text'>>> HELLO THERE, {this.state.username}</p>
-                                    <p className='terminal__text'>>> I AM A TUT-9001 PERSONAL TRAINING ASSISTANT</p>
-                                    <p className='terminal__text'>>>  MY GOAL IS TO PROVIDE YOU WITH GUIDED MOVEMENT ROUTINES DURING TIMES OF *ahem* ...ISOLATION</p>
-                                    <p className='terminal__text'>>> SHALL WE GET STARTED THEN?</p>
+                                    <p className='terminal__text--intro'>>> HELLO THERE, <span>{this.state.username}</span></p>
+                                    <p className='terminal__text--intro'>>> I AM A TUT-9001 PERSONAL TRAINING ASSISTANT</p>
+                                    <p className='terminal__text--intro'>>>  MY GOAL IS TO PROVIDE YOU WITH GUIDED MOVEMENT ROUTINES DURING TIMES OF *ahem* ...ISOLATION</p>
+                                    <p className='terminal__text--intro'>>> SHALL WE GET STARTED THEN?</p>
                                 </>
                             )}
                         </div>

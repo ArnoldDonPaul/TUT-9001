@@ -16,10 +16,31 @@
     &__text {
         color: red;
         font-weight: bold;
+        &--intro {
+            margin-bottom: 14px;
+            color: red;
+            font-weight: bold;
+        }
+    }
+    &__input {
+        margin-right: 50px;
+        padding: 7.75px;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 16px;
+        width: 50%;
+        border: solid 2px red;
+        background-color: black;
+        color: white;
+        margin-bottom: 5px;
     }
     // &__prompt {
 
     // }
+}
+
+span {
+    color: white;
+    font-weight: 100;
 }
 
 .greeting {

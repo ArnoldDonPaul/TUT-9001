@@ -5,6 +5,8 @@
 }
 
 .terminal {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
     text-align: left;
     border: solid 2px grey;
     color: white;
@@ -16,13 +18,33 @@
     &__text {
         color: red;
         font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 10px;
+        &--special {
+            font-size: 15px;
+            font-weight: bold;
+            color: red;
+        }
+    }
+    &__button {
+        border: solid 2px red;
+        padding: 7px;
+        background-color: black;
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 18px;
     }
     // &__prompt {
 
     // }
 }
 
+.checkbox-box {
+    margin-bottom: 10px;
+}
+
 .output {
+    font-family: 'Courier New', Courier, monospace;
     text-align: left;
     border: solid 2px grey;
     color: white;
@@ -33,6 +55,10 @@
     top: 765px;
     left: 29px;
     right: 29px;
+    &__box {
+        border-bottom: solid 2px white;
+        margin-bottom: 10px;
+    }
     &__text {
         color: red;
         font-weight: bold;
@@ -43,27 +69,40 @@
     &__instruction {
         color: red;
         margin-top: 0;
-        font-size: 14px;
+        font-size: 17px;
         font-weight: bold;
+        margin-bottom: 10px;
+        &--warmup {
+            color: red;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 17px;
+            font-weight: bold;
+            text-align: center;
+        }
     }
     &__header {
         color: white;
         margin-top: 0;
-        font-size: 14px;
+        font-size: 17px;
+        font-weight: 200;
+        margin-bottom: 10px;
     }
     &__warmup {
         display: flex;
         justify-content: space-between;
         &--output {
             color: white;
-            font-size: 18px;
+            font-size: 20px;
             margin-top: 0;
+            margin-bottom:10px;
         }
     }
     &__exercise {
         color: white;
-        font-size: 18px;
+        font-size: 20px;
         margin-top: 0;
+        margin-bottom: 10px;
         text-transform: uppercase;
     }
     &__inline {
@@ -72,10 +111,11 @@
     }
 }
 
-.true-false {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
+.option-box {
+    margin-bottom: 5px;
+    &__box {
+        margin: 0;
+    }
 }
 
 .greeting {
@@ -110,14 +150,11 @@
         position: absolute;
         bottom: 20px;
         right: 50px;
-    }
-}
-
-.option-box {
-    &__box {
-        color: black;
-    }
-    &__text {
-
+        &--leftside {
+            height: 75px;
+            position: absolute;
+            bottom: 20px;
+            left: 50px;
+        }
     }
 }

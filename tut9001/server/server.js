@@ -11,8 +11,8 @@ app.get('/input-form', (req, res) => {
     res.status(200).send(data)
 })
 
-app.get('/input-form', (req, res) => {
-    res.status(200).send(upper)
-})
+// app.get('/input-form', (req, res) => {
+//     res.status(200).send(upper)
+// })
 
 app.listen(8080, () => console.log("server running"))
