@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import TUT from '../../assets/talking.gif';
+import Power from '../../assets/power.png';
 import axios from 'axios';
 
 import './Description.scss'
@@ -36,6 +37,9 @@ export default class Description extends Component {
                         ))}
                     </div>
                 </div>
+                <Link to='/power-down'>
+                    <img className='power' src={Power} alt='button'></img>
+                </Link>
             </section>
         )
     }
