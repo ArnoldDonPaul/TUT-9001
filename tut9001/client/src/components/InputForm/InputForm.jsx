@@ -122,6 +122,9 @@ const InputForm = (props) => {
                                 </div>
                             ))}
                             <p className='output__instruction'>REPEAT 3 OR 4 TIMES TODAY</p>
+                            <Link to='/description' className='description__border'>
+                                <p className='description__button'>EXERCISE DESCRIPTIONS</p>
+                            </Link>
                         </section>
                     </>
                 )}

@@ -6,6 +6,7 @@ import Boot from './components/Boot/Boot'
 import Greeting from './components/Greeting/Greeting'
 import InputForm from './pages/InputForm'
 import PowerDown from './components/PowerDown/PowerDown'
+import Description from './components/Description/Description'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/greeting' component={Greeting} />
           <Route path='/input-form' component={InputForm} />
           <Route path='/power-down' component={PowerDown} />
+          <Route path='/description' component={Description} />
         </Switch>
       </BrowserRouter>
     </>

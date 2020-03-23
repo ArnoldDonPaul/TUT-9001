@@ -97,4 +97,14 @@ span {
         color: red;
         font-weight: bold;
     }
+    &__name {
+        font-size: 15px;
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
+    &__description {
+        font-size: 15px;
+        margin-top: 0;
+        margin-bottom: 5px;
+    }
 }

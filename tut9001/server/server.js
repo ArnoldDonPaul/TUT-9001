@@ -10,4 +10,8 @@ app.get('/input-form', (req, res) => {
     res.status(200).send(data)
 })
 
+app.get('/description', (req, res) => {
+    res.status(200).send(data)
+})
+
 app.listen(8080, () => console.log("server running"))
