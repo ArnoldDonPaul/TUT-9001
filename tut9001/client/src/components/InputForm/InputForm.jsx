@@ -7,6 +7,8 @@ import ArrowD from '../../assets/arrow-down.png';
 import './InputForm.scss'
 //practicing the use of if statements
 
+// Post programming languages either use snake case or camel case. With JS you usually want to stick with Camel case.
+// So all your variables should start with a lower case
 let Upper = ""
 let Lower = ""
 let Weights = ""
@@ -70,18 +72,18 @@ const InputForm = (props) => {
                     <form className='checkbox-form' onSubmit={props.handleSubmit}>
                         <div className='checkbox-box'>
                             <div className='option-box'>
-                                <input type="checkbox" className='option-box__box' name="upper" value="upper" onChange={props.handleChange1}></input>
+                                <input type="checkbox" className='option-box__box' name="upper" value="upper" onChange={props.handleWorkoutTypeChanged}></input>
                                 <label for="upper" className='option-box__text'> UPPER BODY</label>
                             </div>
                             <div className='option-box'>
-                                <input type="checkbox" className='option-box__box' name="lower" value="lower" onChange={props.handleChange2}></input>
+                                <input type="checkbox" className='option-box__box' name="lower" value="lower" onChange={props.handleWorkoutTypeChanged}></input>
                                 <label for="upper" className='option-box__text'> LOWER BODY</label>
                             </div>
                         </div>
                         <p className='terminal__text'>>> DO YOU HAVE ACCESS TO DUMBBELLS?</p>
                         <div className='checkbox-box'>
                             <div className='option-box'>
-                                <input type="checkbox" className='option-box__box' name="yes" value="yes" onChange={props.handleChange3}></input>
+                                <input type="checkbox" className='option-box__box' name="yes" value="yes" onChange={props.handleWorkoutTypeChanged}></input>
                                 <label for="yes" className='option-box__text'> YES</label>
                             </div>
                         </div>

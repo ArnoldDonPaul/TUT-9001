@@ -8,120 +8,62 @@ export default class InputForm extends Component {
         super(props);
         this.state = {
             showInfo: false,
-            boxUpper: false,
-            boxLower: false,
-            boxYes: false,
+            upperWorkout: false,
+            lowerWorkout: false,
+            hasDumbbells: false,
             data: []
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
-    handleChange1 = event => {
-        this.setState({ boxUpper: event.target.checked }, () => {
-        });
+
+    handleWorkoutTypeChanged = event => {
+        let workoutType;
+        switch (event.target.value) {
+            case 'upper':
+                workoutType = 'upperWorkout';
+                break;
+            case 'lower':
+                workoutType = 'lowerWorkout';
+                break;
+            case 'yes':
+                workoutType = 'hasDumbbells';
+                break;
+        }
+
+        this.setState({ [workoutType]: event.target.checked });
     }
-    handleChange2 = event => {
-        this.setState({ boxLower: event.target.checked }, () => {
-        });
-    }
-    handleChange3 = event => {
-        this.setState({ boxYes: event.target.checked }, () => {
-        });
-    };
-    handleSubmit(event) {
+
+    handleSubmit = async event => {
         event.preventDefault();
         this.setState({
             showInfo: true,
         });
-        if (this.state.boxUpper === true && this.state.boxLower === true && this.state.boxYes === true) {
-            axios
-                .get(`http://localhost:8080/input-form`)
-                .then(response => {
-                    this.setState({
-                        data: response.data
-                    });
-                }
-                )
-        } else if (this.state.boxUpper === false && this.state.boxLower === false && this.state.boxYes === false) {
-            axios
-                .get(`http://localhost:8080/input-form`)
-                .then(response => {
-                    const responseData = response.data.filter(category => category.category === "lower");
-                    console.log(responseData)
-                    this.setState({
-                        data: responseData
-                    });
-                }
-                )
-        } else if (this.state.boxUpper === true && this.state.boxLower === false && this.state.boxYes === true) {
-            axios
-                .get(`http://localhost:8080/input-form`)
-                .then(response => {
-                    const responseData = response.data.filter(category => category.category === "upper");
-                    console.log(responseData)
-                    this.setState({
-                        data: responseData
-                    });
-                }
-                )
-        } else if (this.state.boxUpper === false && this.state.boxLower === true && this.state.boxYes === true) {
-            axios
-                .get(`http://localhost:8080/input-form`)
-                .then(response => {
-                    const responseData = response.data.filter(category => category.category === "lower");
-                    console.log(responseData)
-                    this.setState({
-                        data: responseData
-                    });
-                }
-                )
-        } else if (this.state.boxUpper === false && this.state.boxLower === true && this.state.boxYes === false) {
-            axios
-                .get(`http://localhost:8080/input-form`)
-                .then(response => {
-                    const responseData = response.data.filter(category => category.category === "lower");
-                    console.log(responseData)
-                    this.setState({
-                        data: responseData
-                    });
-                }
-                )
 
-
-        } else if (this.state.boxUpper === true && this.state.boxLower === false && this.state.boxYes === false) {
-            axios
-                .get(`http://localhost:8080/input-form`)
-                .then(response => {
-                    const responseData = response.data.filter(category => category.BW === true);
-                    console.log(responseData)
-                    this.setState({
-                        data: responseData
-                    });
-                }
-                )
-        } else if (this.state.boxUpper === true && this.state.boxLower === true && this.state.boxYes === false) {
-            axios
-                .get(`http://localhost:8080/input-form`)
-                .then(response => {
-                    const responseData = response.data.filter(category => category.weightsReq === false);
-                    console.log(responseData)
-                    this.setState({
-                        data: responseData
-                    });
-                }
-                )
+        let data = await axios.get(`http://localhost:8080/input-form`);
+        let responseData = [...data];
+        if (this.state.upperWorkout === false && this.state.lowerWorkout === false && this.state.hasDumbbells === false) {
+            responseData = data.filter(category => category.category === "lower");
+        } else if (this.state.upperWorkout === true && this.state.lowerWorkout === false && this.state.hasDumbbells === true) {
+            responseData = data.filter(category => category.category === "upper");
+        } else if (this.state.upperWorkout === false && this.state.lowerWorkout === true && this.state.hasDumbbells === true) {
+            responseData = data.filter(category => category.category === "lower");
+        } else if (this.state.upperWorkout === false && this.state.lowerWorkout === true && this.state.hasDumbbells === false) {
+            responseData = data.filter(category => category.category === "lower");
+        } else if (this.state.upperWorkout === true && this.state.lowerWorkout === false && this.state.hasDumbbells === false) {
+            responseData = data.filter(category => category.BW === true);
+        } else if (this.state.upperWorkout === true && this.state.lowerWorkout === true && this.state.hasDumbbells === false) {
+            responseData = data.filter(category => category.weightsReq === false);
         }
 
+        this.setState({ data: responseData });
     }
+
     render() {
         return (
-            <>
                 <InputFormComp
                     inputProps={this.state}
-                    handleChange1={this.handleChange1}
-                    handleChange2={this.handleChange2}
-                    handleChange3={this.handleChange3}
+                    handleWorkoutTypeChanged={this.handleWorkoutTypeChanged}
                     handleSubmit={this.handleSubmit} />
-            </>
         );
     }
 }
