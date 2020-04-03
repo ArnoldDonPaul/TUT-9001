@@ -13,7 +13,6 @@ export default class InputForm extends Component {
             hasDumbbells: false,
             data: []
         };
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleWorkoutTypeChanged = event => {
@@ -39,31 +38,50 @@ export default class InputForm extends Component {
             showInfo: true,
         });
 
-        let data = await axios.get(`http://localhost:8080/input-form`);
-        let responseData = [...data];
-        if (this.state.upperWorkout === false && this.state.lowerWorkout === false && this.state.hasDumbbells === false) {
-            responseData = data.filter(category => category.category === "lower");
-        } else if (this.state.upperWorkout === true && this.state.lowerWorkout === false && this.state.hasDumbbells === true) {
-            responseData = data.filter(category => category.category === "upper");
-        } else if (this.state.upperWorkout === false && this.state.lowerWorkout === true && this.state.hasDumbbells === true) {
-            responseData = data.filter(category => category.category === "lower");
-        } else if (this.state.upperWorkout === false && this.state.lowerWorkout === true && this.state.hasDumbbells === false) {
-            responseData = data.filter(category => category.category === "lower");
-        } else if (this.state.upperWorkout === true && this.state.lowerWorkout === false && this.state.hasDumbbells === false) {
-            responseData = data.filter(category => category.BW === true);
-        } else if (this.state.upperWorkout === true && this.state.lowerWorkout === true && this.state.hasDumbbells === false) {
-            responseData = data.filter(category => category.weightsReq === false);
-        }
+        let response = await axios.get(`http://localhost:8080/input-form`);
+        let workouts = response.data;
+        let filteredWorkouts = workouts.filter(workout => {
+            if (this.state.hasDumbbells) {
+                if (this.state.upperWorkout && this.state.lowerWorkout) {
+                    return workout
+                } else if (this.state.upperWorkout) {
+                    return workout.category === 'upper';
+                } else if (this.state.lowerWorkout) {
+                    return workout.category === 'lower';
+                }
+            } else {
+                if (this.state.upperWorkout && this.state.lowerWorkout) {
+                    return !workout.weightReqs;
+                } else if (this.state.upperWorkout) {
+                    return workout.category === 'upper' && !workout.weightsReq;
+                } else if (this.state.lowerWorkout) {
+                    return workout.category === 'lower' && !workout.weightsReq;
+                }
+            }
+            // if (this.state.upperWorkout && this.state.lowerWorkout && this.state.hasDumbbells) {
+            //     return workout;
+            // } else if (this.state.upperWorkout && this.state.lowerWorkout) {
+            //     return !workout.weightsReq;
+            // } else if (this.state.upperWorkout && this.state.hasDumbbells) {
+            //     return workout.category === 'upper';
+            // } else if (this.state.lowerWorkout && this.state.hasDumbbells) {
+            //     return workout.category === 'lower';
+            // } else if (this.state.upperWorkout) {
+            //     return workout.category === 'upper' && !workout.weightsReq
+            // } else if (this.state.lowerWorkout) {
+            //     return workout.category === 'lower' && !workout.weightsReq
+            // }
+        });
 
-        this.setState({ data: responseData });
+        this.setState({ data: filteredWorkouts });
     }
 
     render() {
         return (
-                <InputFormComp
-                    inputProps={this.state}
-                    handleWorkoutTypeChanged={this.handleWorkoutTypeChanged}
-                    handleSubmit={this.handleSubmit} />
+            <InputFormComp
+                inputProps={this.state}
+                handleWorkoutTypeChanged={this.handleWorkoutTypeChanged}
+                handleSubmit={this.handleSubmit} />
         );
     }
 }
