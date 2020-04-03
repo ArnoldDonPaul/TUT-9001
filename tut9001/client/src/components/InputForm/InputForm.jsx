@@ -6,9 +6,6 @@ import ArrowD from '../../assets/arrow-down.png';
 
 import './InputForm.scss'
 //practicing the use of if statements
-
-// Post programming languages either use snake case or camel case. With JS you usually want to stick with Camel case.
-// So all your variables should start with a lower case
 let Upper = ""
 let Lower = ""
 let Weights = ""
@@ -119,7 +116,7 @@ const InputForm = (props) => {
                                 <p className='output__instruction--warmup'>20 SECONDS REST</p>
                             </div>
                             {props.inputProps.data.map(x => (
-                                <div key={x.id}>
+                                <div key={x.key}>
                                     <p className='output__exercise'>{x.name}</p>
                                 </div>
                             ))}

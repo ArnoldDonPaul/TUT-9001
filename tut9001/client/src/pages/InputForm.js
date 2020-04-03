@@ -40,37 +40,21 @@ export default class InputForm extends Component {
 
         let response = await axios.get(`http://localhost:8080/input-form`);
         let workouts = response.data;
+        //TODO:comeback to this satement.
         let filteredWorkouts = workouts.filter(workout => {
-            if (this.state.hasDumbbells) {
-                if (this.state.upperWorkout && this.state.lowerWorkout) {
-                    return workout
-                } else if (this.state.upperWorkout) {
-                    return workout.category === 'upper';
-                } else if (this.state.lowerWorkout) {
-                    return workout.category === 'lower';
-                }
-            } else {
-                if (this.state.upperWorkout && this.state.lowerWorkout) {
-                    return !workout.weightReqs;
-                } else if (this.state.upperWorkout) {
-                    return workout.category === 'upper' && !workout.weightsReq;
-                } else if (this.state.lowerWorkout) {
-                    return workout.category === 'lower' && !workout.weightsReq;
-                }
+            if (this.state.upperWorkout && this.state.lowerWorkout && this.state.hasDumbbells) {
+                return workout;
+            } else if (this.state.upperWorkout && this.state.lowerWorkout) {
+                return !workout.weightsReq;
+            } else if (this.state.upperWorkout && this.state.hasDumbbells) {
+                return workout.category === 'upper';
+            } else if (this.state.lowerWorkout && this.state.hasDumbbells) {
+                return workout.category === 'lower';
+            } else if (this.state.upperWorkout) {
+                return workout.category === 'upper' && !workout.weightsReq
+            } else if (this.state.lowerWorkout) {
+                return workout.category === 'lower' && !workout.weightsReq
             }
-            // if (this.state.upperWorkout && this.state.lowerWorkout && this.state.hasDumbbells) {
-            //     return workout;
-            // } else if (this.state.upperWorkout && this.state.lowerWorkout) {
-            //     return !workout.weightsReq;
-            // } else if (this.state.upperWorkout && this.state.hasDumbbells) {
-            //     return workout.category === 'upper';
-            // } else if (this.state.lowerWorkout && this.state.hasDumbbells) {
-            //     return workout.category === 'lower';
-            // } else if (this.state.upperWorkout) {
-            //     return workout.category === 'upper' && !workout.weightsReq
-            // } else if (this.state.lowerWorkout) {
-            //     return workout.category === 'lower' && !workout.weightsReq
-            // }
         });
 
         this.setState({ data: filteredWorkouts });
