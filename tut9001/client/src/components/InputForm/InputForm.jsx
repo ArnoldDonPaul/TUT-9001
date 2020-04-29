@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import TUT from '../../assets/talking.gif';
+import TUT from '../TUT/TUT';
 import Power from '../../assets/power.png';
 import ArrowD from '../../assets/arrow-down.png';
 
@@ -65,7 +65,7 @@ const InputForm = (props) => {
     return (
         <section className='background'>
             <div className='greeting'>
-                <img className='TUT-greeting' src={TUT} alt='Daisy...Daisy...'></img>
+                <TUT tut_state='talking' />
                 <div className='terminal'>
                     <p className='terminal__text'>>> PLEASE COMPLETE THE FOLLOWING...</p>
                     <p className='terminal__text'>>> WHAT IS YOUR FOCUS FOR TODAY?</p>

@@ -35,9 +35,6 @@
         font-family: 'Courier New', Courier, monospace;
         font-size: 18px;
     }
-    // &__prompt {
-
-    // }
 }
 
 .checkbox-box {
@@ -129,13 +126,6 @@
     flex: center;
 }
 
-.TUT-greeting {
-    height: 150px;
-    width: 150px;
-    position: absolute;
-    top: 50px;
-}
-
 .description {
     &__border {
         text-decoration: none;
@@ -155,7 +145,7 @@
         position: absolute;
         bottom: 20px;
         left: 170px;
-        
+
     }
     &__arrow {
         height: 75px;
