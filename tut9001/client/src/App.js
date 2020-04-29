@@ -10,7 +10,6 @@ import Description from './components/Description/Description'
 
 function App() {
   return (
-    <>
       <BrowserRouter>
         <Switch>
           <Route exact path='/' component={LandingPage} />
@@ -21,7 +20,6 @@ function App() {
           <Route path='/description' component={Description} />
         </Switch>
       </BrowserRouter>
-    </>
   );
 }
 

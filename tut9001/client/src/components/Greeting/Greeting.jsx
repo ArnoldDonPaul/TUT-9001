@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import TUT from '../../assets/talking.gif';
+import TUT from '../TUT/TUT';
 import Power from '../../assets/power.png';
 import ArrowR from '../../assets/arrow-right.png';
 
@@ -42,7 +42,7 @@ export default class Greeting extends Component {
         return (
             <section className='background'>
                 <div className='greeting'>
-                    <img className='TUT-greeting' src={TUT} alt='Daisy...Daisy...'></img>
+                    <TUT tut_state='talking' />
                     <div className='terminal'>
                         <p className='terminal__text'>>> TUT-9001 SYSTEM READY </p>
                         <p className='terminal__text'>>> PLEASE ENTER YOUR USERNAME </p>
