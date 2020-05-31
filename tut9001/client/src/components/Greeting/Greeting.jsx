@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import TUT from '../TUT/TUT';
 import Power from '../../assets/power.png';
 import ArrowR from '../../assets/arrow-right.png';
+import About from '../About/About';
+import UserInput from '../UserInput/UserInput';
 
 import './Greeting.scss'
-import About from '../About/About';
 
 export default class Greeting extends Component {
     constructor(props) {
@@ -46,11 +47,7 @@ export default class Greeting extends Component {
                     <TUT tut_state='talking' />
                     <div className='terminal'>
                         <p className='terminal__text'>>> TUT-9001 SYSTEM READY </p>
-                        <p className='terminal__text'>>> PLEASE ENTER YOUR USERNAME </p>
-                        <form onSubmit={this.handleSubmit}>
-                            <input type='text' className='terminal__input' value={this.state.value} onChange={this.handleChange}></input>
-                            <input type='submit' className='terminal__button' value='SUBMIT'></input>
-                        </form>
+                        <UserInput />
                         <div className='result-box'>
                             {this.state.showInfo && (
                                 <>
